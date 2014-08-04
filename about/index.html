@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="bonnie.io, Weaving codes and yarn">
+
+        <link rel="alternate"  href="http://www.bonnie.io/feeds/all.atom.xml" type="application/atom+xml" title="bonnie.io Full Atom Feed"/>
+
+        <title>About Bonnie Chan // bonnie.io // Weaving codes and yarn</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.bonnie.io/theme/css/pure.css">
+    <link rel="stylesheet" href="http://www.bonnie.io/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background-image: url('/images/bg.jpg')">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="/images/profile02.png">
+                            <h1 class="brand-main"><a href="/">bonnie.io</a></h1>
+                            <p class="tagline">Weaving codes and yarn</p>
+                                <p class="links"><a href="http://www.bonnie.io/">Home</a></p>
+                                <p class="links"><a href="http://www.bonnie.io/about">About</a></p>
+                                <p class="links"><a href="http://www.bonnie.io/archives.html">Posts</a></p>
+                                <p class="social">
+                                    <a href="http://github.com/livinghood">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/pub/bonnie-chan/27/368/a99">
+                                        <i class="fa fa-linkedin-square fa-3x"></i>
+                                    </a>
+                                    <a href="http://twitter.com/livinghood">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                <p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <h1 class="content-subhead">About Bonnie Chan</h1>
+            <p><p>I'm Bonnie Chan and living with my husband Kristoffer and 4 cats   in Sweden. </p>
+<p>When I don't sit in front of my computers, I usually spend time planning the next big knitting or crocheting projects. </p>
+<p>As my knitting and crocheting skills fare better than my programming, I often talk about programming in knitting and crocheting terms. </p>
+<p>In case of potential correspondence, it can be done in English, Chinese and Swedish. </p></p>
+<footer class="footer">
+    <p>&copy; Bonnie Chan &ndash;
+        Built with modified <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>    	</div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
