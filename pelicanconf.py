@@ -11,6 +11,8 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
 
+TYPOGRIFY = True
+
 # Date Format
 DATE_FORMATS = {
     'en': '%a, %d %b %Y',
@@ -25,9 +27,9 @@ TRANSLATION_FEED_ATOM = None
 
 # Menu
 MENUITEMS = (
-    ("Home", ""),
     ("About", "about"),
     ("Posts", "archives.html"),
+    ("Contact", "contact"),
 )
 
 
@@ -49,7 +51,10 @@ THEME = "themes/pure-single"
 COVER_IMG_URL = "/images/bg.jpg"
 PROFILE_IMG_URL = "/images/profile02.png"
 
-STATIC_PATHS = ['CNAME', 'images',]
+STATIC_PATHS = ['extra/CNAME', 'images',]
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
+
+PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
