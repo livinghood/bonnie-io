@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>bonnie.io</title><link href="http://www.bonnie.io/" rel="alternate"></link><link href="http://www.bonnie.io/feeds/posts.atom.xml" rel="self"></link><id>http://www.bonnie.io/</id><updated>2014-07-26T10:02:00+02:00</updated><entry><title>The Third post</title><link href="http://www.bonnie.io/the-third-post.html" rel="alternate"></link><updated>2014-07-26T10:02:00+02:00</updated><author><name>Bonnie Chan</name></author><id>tag:www.bonnie.io,2014-07-26:the-third-post.html</id><summary type="html">&lt;p&gt;Hello hello&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install python3-pip
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>The second post</title><link href="http://www.bonnie.io/the-second-post.html" rel="alternate"></link><updated>2014-06-26T10:02:00+02:00</updated><author><name>Bonnie Chan</name></author><id>tag:www.bonnie.io,2014-06-26:the-second-post.html</id><summary type="html">&lt;p&gt;Pelican now comes with a quickstart command similar to Sphinx which will setup the recommended folder structure for you. When running the command, I think I answered all questions with their default answers.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install python3-pip
-&lt;/pre&gt;&lt;/div&gt;</summary></entry></feed>
