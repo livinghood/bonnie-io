@@ -5,11 +5,15 @@ Author: Bonnie Chan
 Summary: A crafter of all the beautiful things
 
 
-I'm Bonnie Chan and living with my husband Kristoffer and 4 cats   in Sweden. 
+![Me and Sunsun]({filename}/images/head.jpg){: style="float:left"}
+I'm Bonnie Chan. I have recently graduated from University of Borås with a degree in Informatics (Systemvetenskap in Swedish).   <i class="fa fa-graduation-cap"></i> If one is not enough, I also have a degree in Media Technology and Creative Media from School of Creative Media in Hong Kong.
 
-When I don't sit in front of my computers, I usually spend time planning the next big knitting or crocheting projects. 
+I live with [Kristoffer](http://kri.gs/) and 4 cats in Sweden. 
 
-As my knitting and crocheting skills fare better than my programming, I often talk about programming in knitting and crocheting terms. 
+When I'm not sitting in front of computers, I spend time on planning the next big knitting or crocheting projects or  watching slow films.
 
-In case of potential correspondence, it can be done in English, Chinese and Swedish. 
+At times, I draw a rare but beautiful connection between knitting/crocheting and programming for they share plenty of characteristics and demand equal amount of skills and dedication from me. 
+
+## About this site
+This is my web fortress where I keep notes, stories and inspirations. The primary idea is to keep a documentation of what I learn and do with a focus on web technology, user experience and QA. When I feel a need to motivate myself, I retreat to this, organise my ideas and keep them in a folder.
 
