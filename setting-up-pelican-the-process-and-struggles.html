@@ -148,7 +148,7 @@ blog/
 <p>I will go through each of them with a brief&nbsp;explanation. </p>
 <p><code>content</code>, as the name suggests, is a directory where you put your content like articles, blog posts and images.  By default, Pelican is configured to treat all pages in the <code>pages</code> directory as static pages which are not sorted in chronological order. In other word, you should put static pages like About me, Projects, Contact, etc. inside  the <code>pages</code> directory. </p>
 <p><code>output</code> is where the html, css and javascript files Pelican generated&nbsp;are. </p>
-<p><code>Makefile</code> define the command <code>make</code> actions, for example the command <code>make html</code> make html files out of the blog contents (in<code>.md</code> or <code>.rst</code> format). It also contains other commands such as <code>make devserver</code> and etc. More about <code>make</code> <a href="http://www.gnu.org/software/make/manual/">here</a>.</p>
+<p><code>Makefile</code> defines actions for the command <code>make</code>, for example the command <code>make html</code> make html files out of the blog contents (in<code>.md</code> or <code>.rst</code> format). It also contains other commands such as <code>make devserver</code> and etc. More about <code>make</code> <a href="http://www.gnu.org/software/make/manual/">here</a>.</p>
 <p><code>fabfile</code> is a configuration file for <a href="http://www.fabfile.org/">Fabric</a>. You can use a command <code>fab serve</code> to generate the site and review at <code>http://localhost:8000</code>. Please note that you need to install Fabric seperately&nbsp;via:</p>
 <div class="highlight"><pre><span class="nv">$ </span>pip install Fabric
 </pre></div>
