@@ -66,17 +66,18 @@
                         </p>
                 </header>
             </section>
-            <p>Learning Python from various sources proved to be a problem. I started off from a book which directed me to download Python (3) package from the official site. It was a mistake. Some days passed and I learnt to install/update Python in the terminal, it was chaotic. There was Python <strong>everywhere</strong>! At some time, <em>this</em> python and <em>that</em> python was conflicting each other. Yes, I know that Python is preinstalled on MacOS but I was trying to use Python 3. Anyway, after a slightly chaotic start, I decided to start from scratch - delete all the python and stick to the&nbsp;terminal.</p>
+            <p>In <a href="/apost.md">the previous post</a>, I mentioned that one of the reasons to try Pelican is because it is written in Python. However, getting Pelican up and running is not as straight-forward as I thought. This post is about some Python problems I have run into before installing Pelican and the process of setting it&nbsp;up. </p>
 <p>Some may say that you don&#8217;t need to know Python to install Pelican but from my experience, it&#8217;s very likely to run into problems that you can&#8217;t solve or don&#8217;t understand without some basic Python&nbsp;understanding. </p>
+<p>Learning Python from various sources proved to be a problem. I started off from a book which directed me to download Python (3) package from the official site. It was a mistake. Some days passed and I learnt to install/update Python in the terminal, it was chaotic. There was Python <strong>everywhere</strong>! At some time, <em>this</em> python and <em>that</em> python was conflicting each other. Yes, I know that Python is preinstalled on MacOS but I was trying to use Python 3. Anyway, after a slightly chaotic start, I decided to start from scratch - delete all the python and stick to the&nbsp;terminal.</p>
 <h2>Lessons&nbsp;learnt</h2>
 <ul>
 <li>Use the&nbsp;Terminal</li>
 <li>Learn some fundamental&nbsp;Python</li>
 <li>Take a look at the <a href="http://docs.getpelican.com/en/3.4.0/">Pelican&nbsp;documentation</a></li>
 </ul>
-<p>Said and done. After the Python clear-up, I did the lessons learnt and managed to get Pelican installed and running without further&nbsp;problem. </p>
+<p>Said and done. After the Python clear-up, I did the lessons learnt and managed to get Pelican installed and running without further problem. So here is how I did&nbsp;it. </p>
 <h2>Pelican&nbsp;Installation</h2>
-<p>Before installing Pelican, do make sure you have the following&nbsp;tools: </p>
+<p>Before installing Pelican, make sure you have the following&nbsp;tools: </p>
 <h3>Tools that you&nbsp;need</h3>
 <ul>
 <li><strong>Text editor</strong> - I use Sublime&nbsp;Text.</li>
@@ -92,7 +93,7 @@
 </pre></div>
 
 
-<p>Then I create a virtual environment in <code>~/virtualenvs/pelican</code> pelican for&nbsp;Pelican:</p>
+<p>Then I create a virtual environment in <code>~/virtualenvs/pelican</code>:</p>
 <div class="highlight"><pre><span class="nv">$ </span>virtualenv ~/virtualenvs/pelican
 </pre></div>
 
@@ -145,16 +146,16 @@ blog/
 
 
 <p>I will go through each of them with a brief&nbsp;explanation. </p>
-<p><code>content</code>, as the name suggests, is a directory where you put your content like articles, blog posts and images.  By default, Pelican is configured to treat all pages in the <code>pages</code> directory as static pages which are not sorted in chronological order. In other word, you should put static pages like About me, Projects, Contact, etc. inside <code>pages</code> directory. </p>
+<p><code>content</code>, as the name suggests, is a directory where you put your content like articles, blog posts and images.  By default, Pelican is configured to treat all pages in the <code>pages</code> directory as static pages which are not sorted in chronological order. In other word, you should put static pages like About me, Projects, Contact, etc. inside  the <code>pages</code> directory. </p>
 <p><code>output</code> is where the html, css and javascript files Pelican generated&nbsp;are. </p>
-<p>Makefile defines the command <code>make</code> what to do, for example it contains definitions for <code>make html</code>, <code>make devserver</code> and etc. More about <code>make</code> <a href="http://www.gnu.org/software/make/manual/">here</a>.</p>
+<p><code>Makefile</code> define the command <code>make</code> actions, for example the command <code>make html</code> make html files out of the blog contents (in<code>.md</code> or <code>.rst</code> format). It also contains other commands such as <code>make devserver</code> and etc. More about <code>make</code> <a href="http://www.gnu.org/software/make/manual/">here</a>.</p>
 <p><code>fabfile</code> is a configuration file for <a href="http://www.fabfile.org/">Fabric</a>. You can use a command <code>fab serve</code> to generate the site and review at <code>http://localhost:8000</code>. Please note that you need to install Fabric seperately&nbsp;via:</p>
 <div class="highlight"><pre><span class="nv">$ </span>pip install Fabric
 </pre></div>
 
 
 <p>Instead of <code>fab</code>, I use <code>make</code>. </p>
-<p><code>pelicanconf.py</code> is a main settings file that will be passed to the templates when the site is generated so the settings are site-wide. If you didn&#8217;t install pelican with the <code>pelican-quickstart</code> comment, this file will be named <code>settingsfile.py</code>instead.</p>
+<p><code>pelicanconf.py</code> is a main settings file that will be passed to the templates when the site is generated so the settings are site-wide. If you didn&#8217;t install pelican with the <code>pelican-quickstart</code> comment, this file will be named <code>settingsfile.py</code> instead.</p>
 <p><code>publishconf.py</code> contains settings to use when ready to publish. It is not aimed to be used locally. So far I haven&#8217;t had the need to edit this&nbsp;file. </p>
 <p>Now it&#8217;s time to put some content! Open your text editor of choice and start writing. I use Markdown syntax so it looks something like this in the&nbsp;editor:</p>
 <div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="n">first</span> <span class="n">post</span>
@@ -179,7 +180,7 @@ blog/
 </pre></div>
 
 
-<p>What&#8217;s left to do is to think about how you want to host your site. You can host it on a server running Apache or Nginx or via GitHub pages. There are plenty of deployment options to choose from. For more information, do check out Pelican <a href="http://docs.getpelican.com/en/3.4.0/tips.html">tips</a> on&nbsp;deployment. </p>
+<p>What&#8217;s left to do is to think about how you want to host your site. You can host it on a server running Apache or Nginx or via GitHub pages. There are plenty of deployment options to choose from. For more information, check out Pelican <a href="http://docs.getpelican.com/en/3.4.0/tips.html">tips</a> on&nbsp;deployment. </p>
 <h2>Links</h2>
 <ul>
 <li><a href="http://learnpythonthehardway.org/book/appendixa.html">Command Line Crash&nbsp;Course</a></li>
