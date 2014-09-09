@@ -91,15 +91,15 @@ blog/
 &lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt; is a main settings file that will be passed to the templates when the site is generated so the settings are site-wide. If you didn&amp;#8217;t install pelican with the &lt;code&gt;pelican-quickstart&lt;/code&gt; comment, this file will be named &lt;code&gt;settingsfile.py&lt;/code&gt; instead.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;publishconf.py&lt;/code&gt; contains settings to use when ready to publish. It is not aimed to be used locally. So far I haven&amp;#8217;t had the need to edit this&amp;nbsp;file. &lt;/p&gt;
 &lt;p&gt;Now it&amp;#8217;s time to put some content! Open your text editor of choice and start writing. I use Markdown syntax so it looks something like this in the&amp;nbsp;editor:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;
-&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;
-&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt;
-&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;first&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;
-&lt;span class="n"&gt;Authors&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Bonnie&lt;/span&gt; &lt;span class="n"&gt;Chan&lt;/span&gt;
-&lt;span class="n"&gt;Lang&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;en&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Title: My first post
+Date: 2014-09-09 11:00
+Category: Python
+Tags: pelican, blog
+Slug: my-first-post
+Authors: Bonnie Chan
+Lang: en
 
-&lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt; &lt;span class="n"&gt;newly&lt;/span&gt; &lt;span class="n"&gt;opened&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+This is my newly opened Pelican blog!
 &lt;/pre&gt;&lt;/div&gt;
 
 
