@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Bonnie Chan'
 SITENAME = u'bonnie.io'
 TAGLINE = 'Weaving codes and yarn'
-SITEURL = 'http://localhost:8000/'
+SITEURL = 'http://bonnie.io'
 
 TIMEZONE = 'Europe/Paris'
 
@@ -29,6 +29,7 @@ TRANSLATION_FEED_ATOM = None
 MENUITEMS = (
     ("About", "about"),
     ("Posts", "archives.html"),
+    ("Projects", "projects")
     ("Contact", "contact"),
 )
 
@@ -39,20 +40,20 @@ MENUITEMS = (
 # Social widget
 SOCIAL = (('github', 'http://github.com/livinghood'),
           ('linkedin-square', 'https://www.linkedin.com/pub/bonnie-chan/27/368/a99'),
-          ('twitter', 'http://twitter.com/livinghood'),)
+          ('twitter', 'http://twitter.com/livinghood'),
+          ('rss-square', 'http://www.bonnie.io/feeds/all.atom.xml'),)
 
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+#RELATIVE_URLS = False
 
 
 THEME = "themes/pure-single"
 COVER_IMG_URL = "/images/bg.jpg"
 PROFILE_IMG_URL = "/images/profile02.png"
 
-STATIC_PATHS = ['extra/CNAME', 'images',]
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = ['CNAME', 'images',]
 
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
