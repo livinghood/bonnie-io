@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bonnie.io</title><link href="http://www.bonnie.io/" rel="alternate"></link><link href="http://www.bonnie.io/feeds/all.atom.xml" rel="self"></link><id>http://www.bonnie.io/</id><updated>2014-09-09T14:05:00+02:00</updated><entry><title>Setting up Pelican - the process and struggles</title><link href="http://www.bonnie.io/setting-up-pelican-the-process-and-struggles.html" rel="alternate"></link><updated>2014-09-09T14:05:00+02:00</updated><author><name>Bonnie Chan</name></author><id>tag:www.bonnie.io,2014-09-09:setting-up-pelican-the-process-and-struggles.html</id><summary type="html">&lt;p&gt;In &lt;a href="http://www.bonnie.io/a-new-beginning-with-pelican.html"&gt;the previous post&lt;/a&gt;, I mentioned that one of the reasons to try Pelican is because it is written in Python. However, getting Pelican up and running is not as straight-forward as I thought. This post is about some Python problems I have run into before installing Pelican and the process of setting it&amp;nbsp;up. &lt;/p&gt;
+&lt;p&gt;Some may say that you don&amp;#8217;t need to know Python to install Pelican but from my experience, it&amp;#8217;s very likely to run into problems that you can&amp;#8217;t solve or don&amp;#8217;t understand without some basic Python&amp;nbsp;understanding. &lt;/p&gt;
+&lt;p&gt;Learning Python from various sources proved to be a problem. I started off from a book which directed me to download Python (3) package from the official site. It was a mistake. Some days passed and I learnt to install/update Python in the terminal, it was chaotic. There was Python &lt;strong&gt;everywhere&lt;/strong&gt;! At some time, &lt;em&gt;this&lt;/em&gt; python and &lt;em&gt;that&lt;/em&gt; python was conflicting each other. Yes, I know that Python is preinstalled on MacOS but I was trying to use Python 3. Anyway, after a slightly chaotic start, I decided to start from scratch - delete all the python and stick to the&amp;nbsp;terminal.&lt;/p&gt;
+&lt;h2&gt;Lessons&amp;nbsp;learnt&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the&amp;nbsp;Terminal&lt;/li&gt;
+&lt;li&gt;Learn some fundamental&amp;nbsp;Python&lt;/li&gt;
+&lt;li&gt;Take a look at the &lt;a href="http://docs.getpelican.com/en/3.4.0/"&gt;Pelican&amp;nbsp;documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Said and done. After the Python clear-up, I did the lessons learnt and managed to get Pelican installed and running without further problem. So here is how I did&amp;nbsp;it. &lt;/p&gt;
+&lt;h2&gt;Pelican&amp;nbsp;Installation&lt;/h2&gt;
+&lt;p&gt;Before installing Pelican, make sure you have the following&amp;nbsp;tools: &lt;/p&gt;
+&lt;h3&gt;Tools that you&amp;nbsp;need&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Text editor&lt;/strong&gt; - I use Sublime&amp;nbsp;Text.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Terminal/bash&lt;/strong&gt; &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt; - Install Python 2.7.x or&amp;nbsp;3.3+. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pip&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;virtualenv&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;virtualenvwrapper&lt;/strong&gt;&amp;nbsp;(optional) &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&amp;#8217;m on Mac and Python is already preinstalled. It is considered to be a good practice to install &lt;code&gt;virtualenv&lt;/code&gt; to create isolated Python environments. Having seperate Python environments allows you to install different versions of Python as well as dependencies. For example, you can use Python 2.7.x in Pelican virtualenv while using Python 3 in another one. Having &lt;code&gt;virtualenv&lt;/code&gt; set up can avoid the chaos I had in the very&amp;nbsp;beginning. &lt;/p&gt;
+&lt;p&gt;To install &lt;code&gt;virtualenv&lt;/code&gt; globally:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then I create a virtual environment in &lt;code&gt;~/virtualenvs/pelican&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv ~/virtualenvs/pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To activate the virtual&amp;nbsp;environment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/virtualenvs/pelican
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;source &lt;/span&gt;bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we are ready to install Pelican and Markdown that I use for writing posts like this&amp;nbsp;one.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pelican
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install Markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pelican has a nice feature that helps you kickstart your&amp;nbsp;site. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will prompt some questions that set up some basic configurations which can be changed in &lt;code&gt;pelicanconf.py&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;When Pelican is installed, there are a couple of dependencies are being installed automatically at the same&amp;nbsp;time:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/feedgenerator"&gt;&lt;strong&gt;feedgenerator&lt;/strong&gt;&lt;/a&gt; - to generate the Atom&amp;nbsp;feeds&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/Jinja2"&gt;&lt;strong&gt;jinja2&lt;/strong&gt;&lt;/a&gt; - for templating&amp;nbsp;support&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/Pygments"&gt;&lt;strong&gt;pygments&lt;/strong&gt;&lt;/a&gt; - for syntax&amp;nbsp;highligting&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/docutils"&gt;&lt;strong&gt;docutils&lt;/strong&gt;&lt;/a&gt; - for supporting reStructuredText as an input&amp;nbsp;format&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/pytz"&gt;&lt;strong&gt;pytz&lt;/strong&gt;&lt;/a&gt; - for timezone&amp;nbsp;definitions&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/blinker"&gt;&lt;strong&gt;blinkers&lt;/strong&gt;&lt;/a&gt; - an object-to-object and broadcast signaling&amp;nbsp;system&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/Unidecode"&gt;&lt;strong&gt;unidecode&lt;/strong&gt;&lt;/a&gt; - for &lt;span class="caps"&gt;ASCII&lt;/span&gt; transliterationsn of Unicode&amp;nbsp;text&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/six"&gt;&lt;strong&gt;six&lt;/strong&gt;&lt;/a&gt; - for Python 2 and 3 compatibility&amp;nbsp;utilities&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/MarkupSafe"&gt;&lt;strong&gt;MarkupSafe&lt;/strong&gt;&lt;/a&gt; - for a markup safe string&amp;nbsp;implementation&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/python-dateutil"&gt;&lt;strong&gt;python-dateutil&lt;/strong&gt;&lt;/a&gt; - to read the date&amp;nbsp;metadata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once Pelican is installed, it provides a skeleton structure:
+Use the command &lt;code&gt;tree&lt;/code&gt; to generate a directory&amp;nbsp;tree:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;tree
+blog/
+├── content
+│   └── &lt;span class="o"&gt;(&lt;/span&gt;pages&lt;span class="o"&gt;)&lt;/span&gt;
+│   └── &lt;span class="o"&gt;(&lt;/span&gt;images&lt;span class="o"&gt;)&lt;/span&gt;
+├── output
+├── develop_server.sh
+├── fabfile.py
+├── Makefile
+├── pelicanconf.py       
+└── publishconf.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I will go through each of them with a brief&amp;nbsp;explanation. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;content&lt;/code&gt;, as the name suggests, is a directory where you put your content like articles, blog posts and images.  By default, Pelican is configured to treat all pages in the &lt;code&gt;pages&lt;/code&gt; directory as static pages which are not sorted in chronological order. In other word, you should put static pages like About me, Projects, Contact, etc. inside  the &lt;code&gt;pages&lt;/code&gt; directory. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;output&lt;/code&gt; is where the html, css and javascript files Pelican generated&amp;nbsp;are. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Makefile&lt;/code&gt; defines actions for the command &lt;code&gt;make&lt;/code&gt;, for example the command &lt;code&gt;make html&lt;/code&gt; make html files out of the blog contents (in&lt;code&gt;.md&lt;/code&gt; or &lt;code&gt;.rst&lt;/code&gt; format). It also contains other commands such as &lt;code&gt;make devserver&lt;/code&gt; and etc. More about &lt;code&gt;make&lt;/code&gt; &lt;a href="http://www.gnu.org/software/make/manual/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fabfile&lt;/code&gt; is a configuration file for &lt;a href="http://www.fabfile.org/"&gt;Fabric&lt;/a&gt;. You can use a command &lt;code&gt;fab serve&lt;/code&gt; to generate the site and review at &lt;code&gt;http://localhost:8000&lt;/code&gt;. Please note that you need to install Fabric seperately&amp;nbsp;via:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install Fabric
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Instead of &lt;code&gt;fab&lt;/code&gt;, I use &lt;code&gt;make&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt; is a main settings file that will be passed to the templates when the site is generated so the settings are site-wide. If you didn&amp;#8217;t install pelican with the &lt;code&gt;pelican-quickstart&lt;/code&gt; comment, this file will be named &lt;code&gt;settingsfile.py&lt;/code&gt; instead.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;publishconf.py&lt;/code&gt; contains settings to use when ready to publish. It is not aimed to be used locally. So far I haven&amp;#8217;t had the need to edit this&amp;nbsp;file. &lt;/p&gt;
+&lt;p&gt;Now it&amp;#8217;s time to put some content! Open your text editor of choice and start writing. I use Markdown syntax so it looks something like this in the&amp;nbsp;editor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Title: My first post
+Date: 2014-09-09 11:00
+Category: Python
+Tags: pelican, blog
+Slug: my-first-post
+Authors: Bonnie Chan
+Lang: en
+
+This is my newly opened Pelican blog!
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save it as &lt;code&gt;.md&lt;/code&gt; file in &lt;code&gt;content&lt;/code&gt;folder. Almost ready! To generate the&amp;nbsp;site:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make devserver
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Your website should be ready at &lt;code&gt;http://localhost:8000&lt;/code&gt;. When you edit any files, it will automatically generate the site with the new changes. Once you are happy with it, you can stop the development&amp;nbsp;server: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;./develop_server.sh stop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;What&amp;#8217;s left to do is to think about how you want to host your site. You can host it on a server running Apache or Nginx or via GitHub pages. There are plenty of deployment options to choose from. For more information, check out Pelican &lt;a href="http://docs.getpelican.com/en/3.4.0/tips.html"&gt;tips&lt;/a&gt; on&amp;nbsp;deployment. &lt;/p&gt;
+&lt;h2&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://learnpythonthehardway.org/book/appendixa.html"&gt;Command Line Crash&amp;nbsp;Course&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://learnpythonthehardway.org/book/"&gt;Learn Python the Hard&amp;nbsp;Way&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python"&gt;Homebrew and&amp;nbsp;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://virtualenv.readthedocs.org/"&gt;virtualenv&amp;nbsp;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="pelican"></category><category term="python"></category></entry><entry><title>A New Beginning with Pelican</title><link href="http://www.bonnie.io/a-new-beginning-with-pelican.html" rel="alternate"></link><updated>2014-08-10T10:02:00+02:00</updated><author><name>Bonnie Chan</name></author><id>tag:www.bonnie.io,2014-08-10:a-new-beginning-with-pelican.html</id><summary type="html">&lt;p&gt;The last time I had a personal homepage or a blog was probably 10 years ago. It was the time when Wordpress catered mainly for personal blogs and people started moving away from handcrafting their sites in Notepad or simply&amp;nbsp;Livejournal. &lt;/p&gt;
+&lt;h2&gt;Why&amp;nbsp;now?&lt;/h2&gt;
+&lt;p&gt;Learning new things requires all senses of mine but I learn the most by writing things down. Say I&amp;#8217;m a system, the inputs of information come from a multitude of senses - sight, hearing, taste, smell and touch. When I perceive the data and make sense out of it, I internalise and learn it by writing things down. Having a place to retreat to helps. This little dwelling will hopefully serve its&amp;nbsp;purpose. &lt;/p&gt;
+&lt;p&gt;Since I submitted my thesis, I&amp;#8217;ve been learning arguably too many things at once. Suddenly all cards on my Trello board ended up under &lt;strong&gt;Done&lt;/strong&gt;. Despite having a sense of temporary emptiness, I filled out more cards and stacked them under &lt;strong&gt;To-do&lt;/strong&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;strong&gt;To-learn&lt;/strong&gt; like&amp;nbsp;this:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="left"&gt;To-do&lt;/th&gt;
+&lt;th align="left"&gt;To-learn++&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;&lt;strong&gt;Find a job!&lt;/strong&gt;&lt;/td&gt;
+&lt;td align="left"&gt;Python&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Sleep a lot&lt;/td&gt;
+&lt;td align="left"&gt;shell/bash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Play with catz&lt;/td&gt;
+&lt;td align="left"&gt;&lt;span class="caps"&gt;HTML5CSSJS&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Roll some catz&lt;/td&gt;
+&lt;td align="left"&gt;&lt;span class="caps"&gt;BI&lt;/span&gt; jazz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Amazing news is that I&amp;#8217;ve pretty much been doing what I planned to do - making some marinated Python with a drizzle of Git and finishing with a few strings of cat hair. Well, you get the idea! Now is the time to practice all the jazz and document all the&amp;nbsp;finess. &lt;/p&gt;
+&lt;h2&gt;&amp;#8230; and why&amp;nbsp;Pelican?&lt;/h2&gt;
+&lt;p&gt;Similar to any projects, I as a user and a project manager have some ideas and requirements when it comes to what I want and achieve. My requirement list is shyly&amp;nbsp;short.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Plenty to&amp;nbsp;learn.&lt;/li&gt;
+&lt;li&gt;Something in Python would be&amp;nbsp;nice.&lt;/li&gt;
+&lt;li&gt;Simple and flexible when it comes to designing and&amp;nbsp;editing.&lt;/li&gt;
+&lt;li&gt;Can host on&amp;nbsp;Github.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My search led me to research more on &lt;a href="https://www.staticgen.com/"&gt;static site generators&lt;/a&gt;. There is plenty of them available but only a handful is written in Python. Wait, why would you want a static site? Because a dynamic &lt;span class="caps"&gt;CMS&lt;/span&gt; like Wordpress would overkill. Take a look at this site, it contain maybe at most 5 pages. It doesn&amp;#8217;t require a database to render what I&amp;#8217;m planning to do here. Since I&amp;#8217;ve been playing with Pelican, I have discovered more benefits&amp;nbsp;-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Supports Markdown which I have been using for a couple of years. I wrote all my papers and even thesis drafts in it. It shifts the focus from configuring endless options to pure writing. I can now write in my preferred editor and just float&amp;nbsp;aloft. &lt;/li&gt;
+&lt;li&gt;It is fast! A set of static files (&lt;span class="caps"&gt;HTML&lt;/span&gt;, &lt;span class="caps"&gt;CSS&lt;/span&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;JS&lt;/span&gt;) loads faster than a dynamically generated site with all cache and&amp;nbsp;database. &lt;/li&gt;
+&lt;li&gt;Extensive documentation. You only need to read &lt;em&gt;carefully&lt;/em&gt; if you run into any&amp;nbsp;problems. &lt;/li&gt;
+&lt;li&gt;Pelican fulfills every point in my requirement list. Can it be&amp;nbsp;possible?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That sounds too good to be true. Yes, indeed. But tales of long-hour frustration will come in the next post combined with a lesson-learnt guide to Pelican. Until then, I give you some links found when I prepared this&amp;nbsp;post.&lt;/p&gt;
+&lt;h2&gt;Useful&amp;nbsp;links&lt;/h2&gt;
+&lt;p&gt;For learning&amp;nbsp;Markdown&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"&gt;Markdown&amp;nbsp;Cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://daringfireball.net/projects/markdown/"&gt;John Gruber&amp;#8217;s original Markdown&amp;nbsp;spec&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://mouapp.com/"&gt;Mou&lt;/a&gt; - Markdown editor for web&amp;nbsp;developers &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://macdown.uranusjr.com/"&gt;MacDown&lt;/a&gt; - Mou&amp;nbsp;spin-off&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Static Site Generators in&amp;nbsp;Python&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cactusformac.com/"&gt;Cactus&lt;/a&gt; - Uses Amazon S3 for easy&amp;nbsp;deployment&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="pelican"></category></entry></feed>
