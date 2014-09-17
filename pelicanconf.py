@@ -29,7 +29,7 @@ TRANSLATION_FEED_ATOM = None
 MENUITEMS = (
     ("About", "about"),
     ("Posts", "archives.html"),
-    ("Projects", "projects")
+    ("Projects", "projects"),
     ("Contact", "contact"),
 )
 
