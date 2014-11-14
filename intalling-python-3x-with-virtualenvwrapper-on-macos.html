@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="bonnie.io, Weaving codes and yarn">
+
+        <link rel="alternate"  href="http://www.bonnie.io/feeds/all.atom.xml" type="application/atom+xml" title="bonnie.io Full Atom Feed"/>
+
+        <title>Intalling Python 3.x with virtualenvwrapper on MacOS // bonnie.io // Weaving codes and yarn</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.bonnie.io/theme/css/pure.css">
+    <link rel="stylesheet" href="http://www.bonnie.io/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background-image: url('/images/bg.jpg')">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="/images/profile02.png">
+                            <h1 class="brand-main"><a href="http://www.bonnie.io">bonnie.io</a></h1>
+                            <p class="tagline">Weaving codes and yarn</p>
+                                <p class="links"><a href="http://www.bonnie.io/about">About</a></p>
+                                <p class="links"><a href="http://www.bonnie.io/archives.html">Posts</a></p>
+                                <p class="links"><a href="http://www.bonnie.io/projects">Projects</a></p>
+                                <p class="links"><a href="http://www.bonnie.io/contact">Contact</a></p>
+                                <p class="social">
+                                    <a href="http://github.com/livinghood">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/pub/bonnie-chan/27/368/a99">
+                                        <i class="fa fa-linkedin-square fa-3x"></i>
+                                    </a>
+                                    <a href="http://twitter.com/livinghood">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                    <a href="http://www.bonnie.io/feeds/all.atom.xml">
+                                        <i class="fa fa-rss-square fa-3x"></i>
+                                    </a>
+                                <p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Intalling Python 3.x with virtualenvwrapper on&nbsp;MacOS</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://www.bonnie.io/tag/python3.html">python3</a>
+                                <a class="post-category" href="http://www.bonnie.io/tag/virtualenv.html">virtualenv</a>
+                                <a class="post-category" href="http://www.bonnie.io/tag/python.html">python</a>
+                        </p>
+                </header>
+            </section>
+            <p>For the last few weeks I&#8217;ve been playing with Python and reading about Python 3. The best way to get to know Python 3 is to dive into it (I thought). Trying not to break everything, it is a good idea to create separate environments for different Python projects. Why? So that I can use both Python 2 and Python&nbsp;3! </p>
+<p>Install Python 3 with&nbsp;Homebrew:</p>
+<div class="highlight"><pre><span class="c"># Always update brew before installing anything with it</span>
+<span class="nv">$ </span>brew update
+
+<span class="nv">$ </span>brew install python3
+</pre></div>
+
+
+<p>In the previous post, I mentioned how to install <code>virtualenv</code>. <code>Virtualenvwrapper</code> is a set of extensions to <code>virtualenv</code>, making it easter to manage multiple projects without conflicts between the installed&nbsp;dependencies. </p>
+<p>Create a virtual environment with <code>virtualenvwrapper</code> with Python&nbsp;3:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install virtualenvwrapper
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">WORKON</span><span class="o">=</span>~/virtualenvs
+<span class="nv">$ </span><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+
+<span class="nv">$ </span>mkvirtualenv --python<span class="o">=</span>/usr/local/bin/python3 python3env
+</pre></div>
+
+
+<p>Great! We have just created a virtualenv named&nbsp;python3env. </p>
+<p>By adding the following lines to <code>.bash_profile</code> to change the path to <code>virtualenvwrapper.sh</code> to where pip was installed, you won&#8217;t need to type <code>source /usr/local/bin/virtualenvwrapper.sh</code> everytime when you want to use <code>virtualenvwrapper</code>.</p>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/virtualenvs
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+</pre></div>
+
+
+<p>We can add another virtualenv and switch between environments with <code>workon</code>:</p>
+<div class="highlight"><pre><span class="o">(</span>python3env<span class="o">)</span><span class="nv">$ </span>mkvirtualenv python2env
+<span class="o">(</span>python2env<span class="o">)</span><span class="nv">$ </span>workon python3env
+<span class="o">(</span>python3env<span class="o">)</span><span class="nv">$ </span>
+</pre></div>
+
+
+<p>Check which version Python in use&nbsp;is:</p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">python3env</span><span class="p">)</span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">V</span>
+<span class="n">Python</span> <span class="mf">3.4.2</span>
+</pre></div>
+
+
+<p>To deactivate a virtual&nbsp;environment: </p>
+<div class="highlight"><pre><span class="o">(</span>python3env<span class="o">)</span><span class="nv">$ </span>deactivate
+</pre></div>
+
+
+<p>To remove a virtualenv: (You have to deactivate the virtualenv before removing&nbsp;it)</p>
+<div class="highlight"><pre><span class="nv">$ </span> rmvirtualenv python3env
+</pre></div>
+
+
+<p>Voilà! Now we can use both Python 2.7.x and Python 3 without destroying the harmonous ecosystem! Time to dig in, install some dependencies and learn more about <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> and <a href="http://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a>.</p>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Bonnie Chan &ndash;
+        Built with modified <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
