@@ -8,7 +8,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;In the previous post, I mentioned how to install &lt;code&gt;virtualenv&lt;/code&gt;. &lt;code&gt;Virtualenvwrapper&lt;/code&gt; is a set of extensions to &lt;code&gt;virtualenv&lt;/code&gt;, making it easter to manage multiple projects without conflicts between the installed&amp;nbsp;dependencies. &lt;/p&gt;
+&lt;p&gt;In &lt;a href="http://www.bonnie.io/setting-up-pelican-the-process-and-struggles.html"&gt;the previous post&lt;/a&gt;, I mentioned how to install &lt;code&gt;virtualenv&lt;/code&gt;. &lt;code&gt;Virtualenvwrapper&lt;/code&gt; is a set of extensions to &lt;code&gt;virtualenv&lt;/code&gt;, making it easter to manage multiple projects without conflicts between the installed&amp;nbsp;dependencies. &lt;/p&gt;
 &lt;p&gt;Create a virtual environment with &lt;code&gt;virtualenvwrapper&lt;/code&gt; with Python&amp;nbsp;3:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenvwrapper
 &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/virtualenvs
